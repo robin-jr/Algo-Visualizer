@@ -1,0 +1,20 @@
+.frame{
+    width: 80%;
+    height: max-content;
+    margin: auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.boundary{
+    height: max-content;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.bar{
+    display: inline-block;
+    border: 1px solid black;
+}
