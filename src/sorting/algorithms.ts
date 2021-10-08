@@ -1,4 +1,4 @@
-const delay=1;
+const delay=1000;
 async function partition(arr: any[],minIndex:number,maxIndex:number,setchange:Function):Promise<number>{
     var pivot=maxIndex;
     let i=minIndex-1,j;

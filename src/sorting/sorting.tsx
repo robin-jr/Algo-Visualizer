@@ -1,7 +1,8 @@
 import React, { FormEventHandler, useEffect, useState } from 'react';
 import { bubbleSort, mergeSort, quickSort, sleep } from './algorithms';
 import './sorting.css';
-export default function Sorting() {
+export default function Sorting(props:any) {
+    const {handleTypeChange,type}=props;
     interface Bar {
         value: number,
         color: string
@@ -54,11 +55,11 @@ export default function Sorting() {
     return (
         <>
             <div className="nav">
-                <h3>{algo}</h3>
+                <h3>Sorting Algorithm: {algo}</h3>
                 <label>Type: </label>
-                <select>
-                    <option>Sorting</option>
-                    <option>Path Finding</option>
+                <select onChange={(e)=>handleTypeChange(e.currentTarget.value)} value={type} >
+                    <option value={0}>Sorting</option>
+                    <option value={1}>Path Finding</option>
                 </select>
                 <label>Algorithm: </label>
                 <select onChange={handleAlgoChange}>
