@@ -4,7 +4,7 @@ import PathFinding from './pathFinding/pathFinding';
 import Sorting from './sorting/sorting';
 
 function App() {
-  const [type, settype] = useState(0);
+  const [type, settype] = useState(1);
   return (
     <div className="">
       {type == 0 ?

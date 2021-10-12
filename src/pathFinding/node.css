@@ -1,0 +1,34 @@
+.node {
+  border: 1px solid black;
+  display: inline-block;
+  width: 2em;
+  height: 100%;
+}
+
+.row {
+  height: 2em;
+}
+
+.visited{
+    background-color: aqua;
+    transition: all 0.8s ease;
+}
+
+.source{
+    background-color: green;
+}
+
+.dest{
+    background-color: red;
+}
+
+.path{
+    background-color: yellow;
+}
+
+.weight{
+    background-color: brown;
+}
+.wall{
+    background-color: black;
+}
