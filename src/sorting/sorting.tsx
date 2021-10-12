@@ -1,5 +1,5 @@
-import React, { FormEventHandler, useEffect, useState } from 'react';
-import { bubbleSort, mergeSort, quickSort, sleep } from './algorithms';
+import { useEffect, useState } from 'react';
+import { bubbleSort, heapSort, mergeSort, quickSort } from './algorithms';
 import './sorting.css';
 export default function Sorting(props:any) {
     const {handleTypeChange,type}=props;
@@ -34,6 +34,10 @@ export default function Sorting(props:any) {
     }
     async function sort() {
         // let arr = [9,8,7,6,5,4,3,2,1];
+        // console.log("before: ",arr);
+        // await heapSort(arr,(e:any)=>{});
+        // console.log("after: ",arr);
+        // return;
         let arr=array;
         console.log("before: ",arr);
         switch (algo) {
@@ -45,6 +49,9 @@ export default function Sorting(props:any) {
                 break;
             case Algorithms.bubbleSort:
                 await bubbleSort(arr,setchange);
+                break;
+            case Algorithms.heapSort:
+                await heapSort(arr,setchange);
                 break;
             default:
                 break;

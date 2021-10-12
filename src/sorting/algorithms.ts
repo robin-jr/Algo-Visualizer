@@ -1,4 +1,4 @@
-const delay=1000;
+const delay=1;
 async function partition(arr: any[],minIndex:number,maxIndex:number,setchange:Function):Promise<number>{
     var pivot=maxIndex;
     let i=minIndex-1,j;
@@ -77,5 +77,32 @@ export async function bubbleSort(arr:any[],setchange:Function) {
             }
         }
     }
+}
+
+async function heapify(arr:any[],n:number,i:number,setchange:Function) {
+    let largest=i,l,r;
+    l=2*i +1;
+    r=2*i +2;
+
+    if(l<n && arr[largest].value<arr[l].value){
+        largest=l;
+    }
+    if(r<n && arr[largest].value<arr[r].value){
+        largest=r;
+    }
+    if(largest!=i){
+        await swap(arr,i,largest,setchange);
+        await heapify(arr,n,largest,setchange);
+    }
     
+}
+export async function heapSort(arr:any[],setchange:Function) {
+    let i,n=arr.length;
+    for(i=Math.floor(n/2)-1;i>=0;i--){
+        await heapify(arr,n,i,setchange);
+    }
+    for(i=n-1;i>0;i--){
+        await swap(arr,i,0,setchange);
+        await heapify(arr,i,0,setchange);
+    }
 }
