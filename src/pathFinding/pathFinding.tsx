@@ -18,7 +18,7 @@ export interface NodeI {
 }
 export default function PathFinding(props: any) {
     const { handleTypeChange, type } = props;
-    const rows = 10, cols = 10;
+    const rows = 15, cols = 25;
     enum Algorithms {
         djikstra = 'Djikstra',
         aStar = 'A*',

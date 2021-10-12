@@ -9,26 +9,60 @@
   height: 2em;
 }
 
-.visited{
+.visited {
+  background-color: aqua;
+  transition: all 0.8s ease;
+  /* animation: visited 5s ease-out 0s 1 forwards; */
+}
+@keyframes visited {
+    0%{
+        background-color: white;
+    }
+    100%{
+        background-color: aqua;
+    }
+}
+
+.visitedIn {
+  margin: auto;
+  position: relative;
+  animation: changeBackgroud 1s ease-out 0s 1 forwards;
+}
+@keyframes changeBackgroud {
+  0% {
+    border-radius: 2em;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    background-color: darkblue;
+  }
+  99% {
+    border: 0em;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    top: 0%;
     background-color: aqua;
-    transition: all 0.8s ease;
+    opacity: 0;
+  }
 }
 
-.source{
-    background-color: green;
+.source {
+  background-color: green !important;
 }
 
-.dest{
-    background-color: red;
+.dest {
+  background-color: red !important;
 }
 
-.path{
-    background-color: yellow;
+.path {
+  background-color: yellow !important;
 }
 
-.weight{
-    background-color: brown;
+.weight {
+  background-color: brown !important;
 }
-.wall{
-    background-color: black;
+.wall {
+  background-color: black !important;
 }
