@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { djikstra } from './algorithms';
+import { useEffect, useState } from 'react'
+import { aStar, djikstra } from './algorithms';
 import NodeC from './node';
 import './node.css';
 
@@ -29,6 +29,18 @@ export default function PathFinding(props: any) {
     useEffect(() => {
         resetGrid();
     }, []);
+    async function search(){
+        switch (algo) {
+            case Algorithms.djikstra:
+                await djikstra(grid,setchange);
+                break;
+            case Algorithms.aStar:
+                await aStar(grid,setchange);
+                break;
+            default:
+                break;
+        }
+    }
     function resetGrid() {
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
@@ -67,8 +79,8 @@ export default function PathFinding(props: any) {
                     <option>{Algorithms.djikstra}</option>
                     <option>{Algorithms.aStar}</option>
                 </select>
-                <button onClick={() => {resetGrid(); }}>Reset Grid</button>
-                <button onClick={async() => {await djikstra(grid,setchange); }}>Start</button>
+                <button onClick={resetGrid}>Reset Grid</button>
+                <button onClick={search}>Start</button>
 
             </div>
             <div className="container">
