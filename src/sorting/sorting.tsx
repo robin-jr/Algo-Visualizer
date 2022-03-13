@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 import { bubbleSort, heapSort, mergeSort, quickSort } from './algorithms';
 import './sorting.css';
-export default function Sorting(props:any) {
-    const {handleTypeChange,type}=props;
+export default function Sorting(props: any) {
+    const { handleTypeChange, type } = props;
     interface Bar {
         value: number,
         color: string
     }
-    enum Algorithms{
-        quickSort='Quick Sort',
-        mergeSort='Merge Sort',
-        heapSort='Heap Sort',
-        bubbleSort='Bubble Sort'
+    enum Algorithms {
+        quickSort = 'Quick Sort',
+        mergeSort = 'Merge Sort',
+        heapSort = 'Heap Sort',
+        bubbleSort = 'Bubble Sort'
     }
-    const [algo, setalgo] :any= useState(Algorithms.quickSort);
+    const [algo, setalgo]: any = useState(Algorithms.quickSort);
     const [array, setarray] = useState<Bar[]>([]);
-    const [change,setchange]:any=useState(0.8);
+    const [change, setchange]: any = useState(0.8);
     const size = 80;
     useEffect(() => {
         resetArray();
@@ -28,7 +28,7 @@ export default function Sorting(props:any) {
         }
         setarray(temp);
     }
-    function handleAlgoChange(e:any){
+    function handleAlgoChange(e: any) {
         setalgo(e.currentTarget.value);
         resetArray();
     }
@@ -38,25 +38,25 @@ export default function Sorting(props:any) {
         // await heapSort(arr,(e:any)=>{});
         // console.log("after: ",arr);
         // return;
-        let arr=array;
-        console.log("before: ",arr);
+        let arr = array;
+        console.log("before: ", arr);
         switch (algo) {
             case Algorithms.quickSort:
                 await quickSort(arr, 0, arr.length - 1, setchange);
                 break;
             case Algorithms.mergeSort:
-                await mergeSort(arr,0,arr.length-1,setchange);
+                await mergeSort(arr, 0, arr.length - 1, setchange);
                 break;
             case Algorithms.bubbleSort:
-                await bubbleSort(arr,setchange);
+                await bubbleSort(arr, setchange);
                 break;
             case Algorithms.heapSort:
-                await heapSort(arr,setchange);
+                await heapSort(arr, setchange);
                 break;
             default:
                 break;
         }
-        console.log("after: ",arr);
+        console.log("after: ", arr);
     }
 
     return (
@@ -64,7 +64,7 @@ export default function Sorting(props:any) {
             <div className="nav">
                 <h3>Sorting Algorithm: {algo}</h3>
                 <label>Type: </label>
-                <select onChange={(e)=>handleTypeChange(e.currentTarget.value)} value={type} >
+                <select onChange={(e) => handleTypeChange(e.currentTarget.value)} value={type} >
                     <option value={0}>Sorting</option>
                     <option value={1}>Path Finding</option>
                 </select>

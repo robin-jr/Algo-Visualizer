@@ -20,7 +20,7 @@ export default function PathFinding(props: any) {
     const { handleTypeChange, type } = props;
     const rows = 15, cols = 25;
     enum Algorithms {
-        djikstra = 'Djikstra',
+        djikstra = 'Dijkstra',
         aStar = 'A*',
     }
     const [algo, setalgo]: any = useState(Algorithms.djikstra);

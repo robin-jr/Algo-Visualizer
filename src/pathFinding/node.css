@@ -49,20 +49,28 @@
 }
 
 .source {
-  background-color: green !important;
+  background-color: #fff !important;
+  position: relative;
+}
+.source div:nth-child(1){
+  opacity: 1 !important;
+  background-color: yellow !important;
 }
 
 .dest {
-  background-color: red !important;
+  position: relative;
 }
-
-.path {
+.dest div:nth-child(1){
+  opacity: 1 !important;
   background-color: yellow !important;
 }
 
 .weight {
-  background-color: brown !important;
+  background-color: orange !important;
 }
 .wall {
   background-color: black !important;
+}
+.path {
+  background-color: yellow !important;
 }

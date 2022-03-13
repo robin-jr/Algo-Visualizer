@@ -25,7 +25,10 @@ export default function NodeC({ nodeC,isMouseDown ,obstacle}: Props) {
             ${nodeC.isVisited ? 'visited' : ''} ${nodeC.isDest ? 'dest' : ''} 
             ${nodeC.isPath ? 'path' : ''} ${nodeC.isWeight ? 'weight' : ''} 
             ${nodeC.isWall ? 'wall' : ''}`}>
-                <div className={`${nodeC.isVisited ? 'visitedIn' : ''}`}></div>
+                <div className={`${nodeC.isVisited ? 'visitedIn' : ''}`}>
+                    {nodeC.isDest && <strong style={{ position:'absolute',left: '0'}}>End</strong>}
+                    {nodeC.isSrc && <strong style={{ position:'absolute',left: '0',top:'-0.25em',fontSize: '2em'}}>{">"}</strong>}
+                </div>
         </div>
     )
 }
