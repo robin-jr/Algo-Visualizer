@@ -91,7 +91,7 @@ export default function PathFinding(props: any) {
                 <button onClick={search}>Start</button>
 
             </div>
-            <div className="container"  onMouseDown={()=>{setisMouseDown(true);console.log("pressed")}} onMouseUp={()=>{setisMouseDown(false);console.log("up")}}>
+            <div className=""  onMouseDown={()=>{setisMouseDown(true);console.log("pressed")}} onMouseUp={()=>{setisMouseDown(false);console.log("up")}}>
                 <div className="frame">
                     <div className="boundary" >
                         {console.log("rebuilding")}

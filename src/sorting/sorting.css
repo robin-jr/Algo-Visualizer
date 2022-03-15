@@ -1,6 +1,6 @@
 .frame{
     width: 80%;
-    height: max-content;
+    overflow: hidden;
     margin: auto;
     padding: 2em;
     display: flex;
@@ -9,7 +9,15 @@
 }
 
 .boundary{
-    height: max-content;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.boundary-sorting{
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin-top: 3em;
 }

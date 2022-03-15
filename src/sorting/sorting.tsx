@@ -79,9 +79,9 @@ export default function Sorting(props: any) {
                 <button onClick={sort}>Sort</button>
 
             </div>
-            <div className="container">
+            <div className="">
                 <div className="frame">
-                    <div className="boundary">{console.log("rebuilding")}
+                    <div className="boundary-sorting">{console.log("rebuilding")}
                         {array.map((e: Bar, idx) => <div className="bar" key={idx} style={{ height: e.value, background: e.color, width: (window.innerWidth * 0.6) / size }}></div>)}
                     </div>
                 </div>
