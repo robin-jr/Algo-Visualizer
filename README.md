@@ -1,11 +1,11 @@
-# Algorithms Visulizer
+# Algorithms Visualiser
 
-In this project I have built a visualizer to visualize various Path finding and sorting algorithms using React. 
+In this project, I have built a visualizer to visualize various Pathfinding and sorting algorithms using React. 
 Dijkstra's algorithm, A* algorithm for the pathfinding algorithms. 
-Merge sort, Quick sort, Heap sort, Bubble sort for the sorting algorithms.
+Merge sort, Quicksort, Heap sort, Bubble sort for the sorting algorithms.
 ### Getting started
-run 
-`npm install`
+run <br/>
+`npm install` and then <br/>
 `npm start`
 
 The live preview is available [here](https://robins-algo-visualizer.netlify.app/)
